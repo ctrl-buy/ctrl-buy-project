@@ -113,7 +113,7 @@ app.get('/map', (req, res) => {
 })
 // 404 
 app.all('*', (req, res) => {
-    res.status(404).render('listings/notFound.ejs')
+    res.status(404).render('listings/notfound.ejs')
 })
 
 app.use((err, req, res, next) => {
