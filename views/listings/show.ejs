@@ -1,0 +1,167 @@
+<% layout('/layout/boilerplate') -%>
+    <script>
+        let mapToken = "<%= process.env.MAP_TOKEN %>";
+        let data = <%- JSON.stringify(data) %>
+    </script>
+
+
+    <section class="show">
+        <div class="showHeader">
+            <div class="headText">
+                <h3>Product Details </h3>
+            </div>
+        </div>
+        <div class="mainContent">
+            <div class="showLeft">
+                <div class="modelName data">
+                    <p><span>Model Name:</span>
+                        <%= data.modelName %>
+                    </p>
+                </div>
+                <div class="description data">
+                    <p><span>Description:</span>
+                        <%= data.description %>
+                    </p>
+                </div>
+                <div class="address data">
+                    <p><span>Address</span>
+                        <%= data.location %>,
+                            <%= data.country %>
+                    </p>
+
+                </div>
+                <div class="owner data">
+                    <p><span>Owner</span>
+                        <%= data.owner.username %>
+                    </p>
+
+                </div>
+                <div class="price data">
+                    <p><span>PKR:</span>
+                        <%= data.price.toLocaleString("en-PK") %>
+                    </p>
+                </div>
+                <div class="formForBuy">
+                    <button type="button" id="payNow">BUY NOW</button>
+                    <div class="form">
+                        <h3>Please select the Payment Method</h3>
+                        <form method="post" action="/listings/<%= data._id %>?_method=DELETE">
+                            <label for="Check">Option1</label>
+                            <input type="checkbox" required>
+                            <br>
+                            <label for="Check">Option2</label>
+                            <input type="checkbox">
+                            <br>
+                            <button type="submit">DONE</button>
+                            <button id="cancel" type="button">CANCEL</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="showRight">
+                <div class="img">
+                    <img src="<%= data.img.url%>" alt="img.png">
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="edit">
+        <% if(currUser && currUser._id.equals(data.owner._id)) {%>
+            <form method="get" action="/listings/<%= data._id %>/edit">
+                <button type="submit">Edit the Data</button>
+            </form>
+            <% } %>
+    </section>
+    <section class="comments">
+        <% if(currUser) {%>
+            <div class="cmntHeader">
+                <div class="headText">
+                    <h3>Leave a review</h3>
+                </div>
+                <p>Your one step can change choice of million people to correct.</p>
+            </div>
+
+            <div class="form">
+                <form action="/listings/<%= data._id %>/reviews" method="post" class="CMNT-main">
+                    <div class="ratingBox">
+                        <label for="rating">Rating</label>
+
+                        <fieldset class="starability-slot">
+                            <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="1"
+                                checked aria-label="No rating." />
+                            <input type="radio" id="first-rate1" name="review[rating]" value="1" />
+                            <label for="first-rate1" title="Terrible">1 star</label>
+                            <input type="radio" id="first-rate2" name="review[rating]" value="2" />
+                            <label for="first-rate2" title="Not good">2 stars</label>
+                            <input type="radio" id="first-rate3" name="review[rating]" value="3" />
+                            <label for="first-rate3" title="Average">3 stars</label>
+                            <input type="radio" id="first-rate4" name="review[rating]" value="4" />
+                            <label for="first-rate4" title="Very good">4 stars</label>
+                            <input type="radio" id="first-rate5" name="review[rating]" value="5" />
+                            <label for="first-rate5" title="Amazing">5 stars</label>
+                        </fieldset>
+                    </div>
+                    <div class="commentBox">
+                        <label for="comment">Comment</label>
+                        <textarea name="review[comment]" id="commnet" cols="30" rows="5" class="form-control"
+                            required></textarea>
+
+                    </div>
+                    <div class="submitBox">
+                        <button type="submit" class="btn btn-dark">Submit</button>
+                    </div>
+                </form>
+            </div>
+            <% } %>
+
+
+                <div class="CMNT-data">
+                    <% if(data.reviews.length> 0) {%>
+                        <div class="CMNT-header">
+                            <h3>Reviews</h3>
+                        </div>
+                        <% } %>
+                            <% for (review of data.reviews) {%>
+                                <hr>
+                                <b>Stars:</b>
+
+                                <p class="starability-result" data-rating="<%= review.rating %>">
+                                    Rated: <%= review.rating %> stars
+                                </p>
+                                <br>
+                                <b>Comment: </b>
+                                <p class="CMNT-comment">
+                                    <%= review.comment %>
+                                </p>
+
+                                <br>
+                                <p class="CMNT-date">
+                                    <%= review.createdAt.toLocaleTimeString() %>
+                                        post by:
+                                        <b>
+                                            <%=review.author.username %>
+                                        </b>
+                                </p>
+                                <br>
+
+                                <% if(currUser && currUser._id.equals(review.author._id)) {%>
+
+                                    <form method="POST"
+                                        action="/listings/<%= data._id %>/reviews/<%= review._id %>?_method=DELETE">
+                                        <button type="submit" class="btn btn-dark btn-sm">delete</button>
+                                    </form>
+                                    <% } %>
+
+                                        <% } %>
+
+                </div>
+    </section>
+    <section class="col-8 offset-3 mb-3 mapCont">
+        <h4>Where you will be get this</h4>
+        <div id="map"></div>
+    </section>
+    <script src="/script/map.js"></script>

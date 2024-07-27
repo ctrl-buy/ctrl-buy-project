@@ -1,0 +1,39 @@
+section.admin {
+    background-color: #F2E9E4;
+    padding-top: 50px;
+}
+
+section.admin .head {
+    width: 100%;
+    text-align: center;
+}
+
+section.admin .adminForm {
+    height: 400px;
+}
+
+section.admin .adminForm form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+section.admin .adminForm form div {
+    margin-top: 50px;
+}
+
+section.admin .adminForm form button {
+    margin-top: 50px;
+    cursor: pointer;
+    height: 40px;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: bolder;
+    background-color: #e09f3e;
+    color: #22223b;
+    border: 2px solid #22223b;
+    border-radius: 12px;
+    transition: all ease .6s;
+}

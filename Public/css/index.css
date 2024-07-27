@@ -1,0 +1,406 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Paytone+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto Mono", monospace;
+  box-sizing: border-box;
+}
+
+/* for input text  */
+input[type="number"],
+input[type="text"] {
+  height: 45px;
+  width: 300px;
+  color: #22223b;
+  padding: 8px 12px;
+  font-size: 20px;
+  border: none;
+  border: 1px solid #22223b;
+  outline: none;
+  background-color: #f2e9e4;
+}
+:root {
+  --trans_def: all ease 0.6s;
+}
+
+/* nav section start  */
+nav {
+  height: 60px;
+  width: 100%;
+  background-color: #f2e9e4;
+  position: sticky;
+  transition: var(--trans_def);
+  z-index: 99;
+
+  /* padding-right: 50px; */
+}
+
+nav.sticky {
+  top: 0;
+  background-color: #e09f3e;
+  height: 70px;
+}
+
+nav .logoName {
+  display: inline-block;
+  position: absolute;
+  padding: 10px 10px;
+  color: #35354d;
+  text-shadow: 3px 4px 7px rgba(81, 67, 21, 0.8);
+}
+
+nav .logoName p {
+  font-size: 35px;
+  font-family: "Paytone One", sans-serif;
+  transition: var(--trans_def);
+}
+
+nav.sticky .logoName p {
+  font-size: 29px;
+}
+
+nav .logo {
+  position: relative;
+}
+
+nav .logo img {
+  position: absolute;
+  right: 50%;
+  top: 0;
+  height: 100px;
+  filter: drop-shadow(10px 10px 5px #22223b);
+}
+
+nav menu {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  right: 20px;
+  top: 10px;
+  width: 200px;
+  text-align: center;
+}
+
+nav menu a {
+  text-decoration: none;
+  color: #22223b;
+  height: 100%;
+  transition: var(--trans_def);
+}
+
+nav menu a:hover i {
+  transform: scale(1.5);
+  color: #35354d;
+}
+
+nav menu a i {
+  display: block;
+  font-size: 30px;
+  transition: var(--trans_def);
+}
+
+nav menu a p {
+  display: block;
+  height: 40px;
+  font-size: 12px;
+  transition: var(--trans_def);
+}
+
+/* nav bar end  */
+
+/* css for index route  */
+section.index {
+  background-color: #f2e9e4;
+}
+
+section.index .indexHead {
+  display: flex;
+  height: 400px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+section.index .indexHead .right,
+section.index .indexHead .left {
+  padding: 40px 50px;
+  width: 50%;
+}
+
+section.index .indexHead .left .leftForm {
+  position: relative;
+  width: 300px;
+}
+
+section.index .indexHead .left .leftForm button {
+  position: absolute;
+  height: 40px;
+  font-size: 20px;
+  width: 40px;
+  right: 0;
+  background-color: #e09f3e;
+  color: #f2e9e4;
+  border: none;
+  border-radius: 50% 0 0 50%;
+}
+
+section.index .indexHead .right h3 {
+  font-size: 22px;
+}
+
+section.index .indexHead .left p {
+  margin-top: 20px;
+  font-size: 28px;
+}
+
+section.index .indexHead .right h3 {
+  text-align: center;
+  font-size: 26px;
+}
+
+section.index .indexHead .right .owl-carousel {
+  /* border: 2px solid black; */
+  height: 300px;
+  overflow: hidden;
+}
+
+section.index .indexHead .right .owl-carousel .item {
+  width: 100%;
+  height: 100%;
+}
+
+section.index .indexHead .right .owl-carousel .item img {
+  object-fit: cover;
+  max-height: 100%;
+}
+
+section.index .indexMain {
+  display: flex;
+}
+
+section.index .indexContainer {
+  display: flex;
+  flex-wrap: wrap;
+  border-right: 1px solid #22223b;
+  width: 85%;
+}
+
+section.index .indexContainer .indexBox {
+  height: 300px;
+  width: 200px;
+  margin: 10px 30px;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 3px solid #22223b;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 8px 15px;
+}
+
+section.index .indexContainer .indexBox a {
+  text-decoration: none;
+}
+
+section.index .indexBox .boxText {
+  position: relative;
+  text-decoration: none;
+  height: 100%;
+}
+
+section.index .indexBox .boxText p {
+  position: absolute;
+  text-decoration: none;
+  color: #f2e9e4;
+  background-color: #22223b5e;
+  font-size: 20px;
+  width: 100%;
+  bottom: -2px;
+  padding: 0 12px 10px;
+}
+
+section.index .indexBox:hover .boxText p {
+  background-color: #22223b;
+  bottom: 0px;
+  transition: var(--trans_def);
+}
+
+section.index .indexBox .boxText .SeeMore {
+  position: absolute;
+  bottom: -50%;
+  right: 0;
+  transition: var(--trans_def);
+  color: #f2e9e4;
+  background-color: #e09f3e;
+  padding: 8px 15px;
+  border-radius: 15px;
+}
+
+section.index .indexBox:hover .boxText .SeeMore {
+  bottom: 70px;
+  transition: var(--trans_def);
+}
+
+section.index .indexMain .adds {
+  display: flex;
+  align-items: center;
+  width: 15%;
+  background-color: white;
+  justify-content: center;
+}
+
+/* responsiveness */
+@media (max-width: 900px) {
+  section.index .indexHead {
+    flex-direction: column-reverse;
+    height: 900px;
+    justify-content: start;
+  }
+
+  section.index .indexHead .right,
+  section.index .indexHead .left {
+    padding: 40px 100px;
+    width: 100%;
+  }
+
+  section.index .indexHead .left .leftForm {
+    margin-top: 50px;
+  }
+
+  section.index .indexHead .left p {
+    font-size: 25px;
+  }
+
+  section.index .indexHead .right h3 {
+    font-size: 25px;
+  }
+
+  section.index .indexHead .right .owl-carousel {
+    height: 450px;
+    overflow: hidden;
+  }
+
+  section.index .indexContainer .indexBox {
+    height: 280px;
+    width: 190px;
+  }
+}
+
+@media (max-width: 700px) {
+  /* nav section start  */
+  nav {
+    height: 50px;
+  }
+
+  nav.sticky {
+    height: 60px;
+  }
+
+  nav .logoName {
+    padding: 10px 30px;
+  }
+
+  nav .logoName p {
+    font-size: 25px;
+    font-family: "Paytone One", sans-serif;
+  }
+
+  nav.sticky .logoName p {
+    font-size: 26px;
+  }
+
+  nav .logo img {
+    height: 90px;
+  }
+
+  nav menu a i {
+    font-size: 20px;
+  }
+
+  nav menu a p {
+    font-size: 14px;
+  }
+
+  section.index .indexHead {
+    flex-direction: column-reverse;
+    height: 800px;
+    justify-content: start;
+  }
+
+  section.index .indexHead .right .owl-carousel {
+    height: 300px;
+    overflow: hidden;
+  }
+
+  section.index .indexContainer {
+    display: flex;
+    flex-wrap: wrap;
+    border-right: 1px solid #22223b;
+    width: 100%;
+  }
+
+  section.index .indexMain .adds {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  nav .logoName {
+    padding: 10px 10px;
+  }
+
+  nav .logoName p {
+    font-size: 25px;
+    font-family: "Paytone One", sans-serif;
+  }
+
+  nav.sticky .logoName p {
+    font-size: 26px;
+  }
+
+  nav .logo img {
+    display: none;
+  }
+
+  nav menu {
+    width: 150px;
+  }
+
+  nav menu a i {
+    font-size: 16px;
+  }
+
+  section.index .indexHead {
+    flex-direction: column-reverse;
+    height: 800px;
+    justify-content: start;
+  }
+
+  section.index .indexHead .right,
+  section.index .indexHead .left {
+    padding: 12px 50px;
+    width: 100%;
+  }
+  /* section.index .indexHead .left p {
+        font-size: 25px;
+    } */
+  section.index .indexHead .left .leftForm {
+    margin-top: 25px;
+  }
+
+  section.index .indexHead .right .owl-carousel {
+    height: 50%;
+    overflow: hidden;
+  }
+
+  section.index .indexContainer {
+    display: flex;
+    flex-wrap: wrap;
+    border-right: 1px solid #22223b;
+    width: 100%;
+  }
+
+  section.index .indexMain .adds {
+    display: none;
+  }
+}

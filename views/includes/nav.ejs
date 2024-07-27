@@ -1,0 +1,31 @@
+<nav>
+    <div class="logoName">
+        <p>CTRL + BUY</p>
+    </div>
+    <menu>
+
+        <div> <a href="/listings/new">
+                <i class="fa-solid fa-circle-plus"></i>
+                <p>Add new Product</p>
+            </a>
+        </div>
+        <div class="dropleft">
+            <button class="btn  " type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <% if(!currUser) {%>
+                    <button class="dropdown-item" type="button"> <a href="/login">login</a></button>
+                    <button class="dropdown-item" type="button"> <a href="/signup">signup</a></button>
+
+                    <% } %>
+                        <% if(currUser) {%>
+                            <button class="dropdown-item" type="button"> <a href="/logout">logout</a></button>
+                            <% } %>
+
+            </div>
+        </div>
+
+    </menu>
+</nav>

@@ -1,0 +1,61 @@
+<% layout('/layout/boilerplate') -%>
+
+
+    <body>
+
+        <section class="editForm">
+            <div class="header">
+                <div class="headerText">
+                    <h3>Update Your Data</h3>
+                </div>
+                <p>Please Fill all the Inputs, if you don`t submit any Image then a default Image will be set.</p>
+            </div>
+            <div class="form">
+                <form method="post" action="/listings/<%= data._id %>?_method=PUT" enctype="multipart/form-data">
+                    <div>
+                        <label for="modelName">Model Name</label>
+                        <input type="text" name="data[modelName]" autocomplete="off" required
+                            value="<%= data.modelName %>">
+                        <div class="line"></div>
+                    </div>
+                    <div>
+                        <label for="description">Description</label> <br>
+                        <textarea name="data[description]" id="description" cols="30" rows="05" required
+                            autocomplete="off"><%= data.description %></textarea>
+                    </div>
+                    <div>
+                        <p>Old Image</p>
+                        <img src="<%= newimgURL %>" alt="img.png">
+                    </div>
+                    <div>
+                        <label for="img" class="form-label">Uplaod Image</label>
+                        <input type="file" name="data[img]" class="form-control">
+
+                    </div>
+                    <div>
+                        <label for="price">Price</label>
+                        <input type="number" name="data[price]" value="<%= data.price %>" autocomplete="off">
+                        <div class="line"></div>
+
+                    </div>
+                    <div>
+                        <label for="location">Location</label>
+                        <input type="text" name="data[location]" required value="<%= data.location %>"
+                            autocomplete="off">
+                        <div class="line"></div>
+
+                    </div>
+                    <div> <label for="country">country</label>
+                        <input type="text" name="data[country]" required value="<%= data.country %>" autocomplete="off">
+                        <div class="line"></div>
+
+                    </div>
+                    <div class="button">
+                        <button type="submit">Edit</button>
+
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </body>

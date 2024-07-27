@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+section.notFound {
+    width: 100%;
+}
+
+section.notFound .upper {
+    display: flex;
+
+}
+
+section.notFound .errorImg {
+    max-width: 50%;
+
+}
+
+section.notFound .errorImg img {
+    width: 100%;
+}
+
+section.notFound .errorText {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+}
+
+section.notFound .errorText h1 {
+    font-family: "Ubuntu", sans-serif;
+}
+
+section.notFound .homeButton {
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+}
+
+section.notFound .homeButton button {
+    margin: 50px 0;
+    cursor: pointer;
+    height: 40px;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: bolder;
+    background-color: #e09f3e;
+    color: #22223b;
+    border: 2px solid #22223b;
+    border-radius: 12px;
+    transition: all ease .6s;
+}

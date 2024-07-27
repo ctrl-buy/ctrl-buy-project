@@ -1,0 +1,33 @@
+<% layout('/layout/boilerplate') -%>
+
+    <div class="form-main">
+        <div class="head">
+            <h1>Please SignUP</h1>
+        </div>
+        <form action="/signup" method="post">
+            <div class="form-box">
+                <div>
+                    <label for="username">User Name</label>
+                    <input type="text" required placeholder="Enter User Name .." autocomplete="off" name="username">
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input type="email" required placeholder="Enter email .." autocomplete="off" name="email">
+                </div>
+                <div>
+                    <label for="password">Password</label>
+                    <input type="password" required placeholder="Enter Password.." autocomplete="off" name="password">
+                </div>
+                <div class="btn">
+                    <button>Sign up</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="login-btn">
+        <form action="/login" method="get">
+            <button>
+                already have an account ?
+            </button>
+        </form>
+    </div>

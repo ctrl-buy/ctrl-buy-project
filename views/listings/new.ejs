@@ -1,0 +1,56 @@
+<% layout('/layout/boilerplate') -%>
+
+
+    <body>
+        <section class="editForm">
+            <div class="header">
+                <div class="headerText">
+                    <h3>Update Your Data</h3>
+                </div>
+                <p>Please Fill all the Inputs, if you don`t submit any Image then a default Image will be set.</p>
+            </div>
+            <div class="form">
+                <form method="post" action="/listings" enctype="multipart/form-data">
+                    <div>
+                        <label for="modelName">Model Name</label>
+                        <input type="text" name="data[modelName]" autocomplete="off" required
+                            placeholder="Enter Model Number">
+                        <div class="line"></div>
+                    </div>
+                    <div>
+                        <label for="description">Description</label> <br>
+                        <textarea name="data[description]" id="description" cols="30" rows="05" required
+                            autocomplete="off" placeholder="Write something about Phone"></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="img" class="form-label">Image</label>
+                        <input type="file" name="data[img]" class="form-control">
+                    </div>
+                    <div>
+                        <label for="price">Price</label>
+                        <input type="number" name="data[price]" placeholder="Enter Price" autocomplete="off">
+                        <div class="line"></div>
+
+                    </div>
+                    <div>
+                        <label for="location">Location</label>
+                        <input type="text" name="data[location]" required placeholder="Enter Location "
+                            autocomplete="off">
+                        <div class="line"></div>
+
+                    </div>
+                    <div> <label for="country">country</label>
+                        <input type="text" name="data[country]" required placeholder="Country" autocomplete="off">
+                        <div class="line"></div>
+
+                    </div>
+                    <div class="button">
+                        <button type="submit">Submit</button>
+
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </body>

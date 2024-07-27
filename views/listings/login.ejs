@@ -1,0 +1,22 @@
+<% layout('/layout/boilerplate') -%>
+
+    <div class="form-main">
+        <div class="head">
+            <h1>Please LogIn</h1>
+        </div>
+        <form action="/login" method="post">
+            <div class="form-box">
+                <div>
+                    <label for="username">User Name</label>
+                    <input type="text" required placeholder="Enter User Name .." autocomplete="off" name="username">
+                </div>
+                <div>
+                    <label for="password">Password</label>
+                    <input type="password" required placeholder="Enter Password.." autocomplete="off" name="password">
+                </div>
+                <div class="btn">
+                    <button>Log IN</button>
+                </div>
+            </div>
+        </form>
+    </div>
